@@ -19,7 +19,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - numpy 1.11.*
+    - numpy
     - cython >=0.24.0
     - setuptools >=19.6
     - yt
