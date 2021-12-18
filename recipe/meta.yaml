@@ -22,11 +22,11 @@ requirements:
     - cython >=0.29.21,<3.0
     - numpy
     - pip
-    - python >= 3.7
+    - python
   run:
     - h5py >=3.1.0
     - more-itertools >=8.4
-    - python >=3.7
+    - python
     - yt >=4.0.1
     - {{ pin_compatible('numpy') }}
 
