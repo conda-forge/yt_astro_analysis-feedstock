@@ -1,45 +1,50 @@
-{% set version = "1.0.0" %}
-{% set sha256 = "f37cd0fa7c4db58b7e577adc7c42e6f7c7f9cd1fadf62db368a3b51171c6f694" %}
+{% set name = "yt-astro-analysis" %}
+{% set version = "1.1.0" %}
+
 
 package:
-  name: yt_astro_analysis
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: yt_astro_analysis-{{ version }}.tar.gz
-  url: http://yt-project.org/sdist/yt_astro_analysis-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
+  sha256: 201ee329797dc95f80a0c26e7d7f62b662722d44052e1620423869e87d2f41e7
 
 build:
-  number: 1002
-  script: python setup.py -q install --single-version-externally-managed --record=record.txt
+  number: 0
+  skip: true   # [py>=312 or py2k]
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - cython >=0.29.21,<3.0
     - numpy
-    - cython >=0.24.0
-    - setuptools >=19.6
-    - yt
-  run:
-    - yt
-    - setuptools
+    - pip
     - python
+  run:
+    - h5py >=3.1.0
+    - more-itertools >=8.4
+    - python
+    - yt >=4.0.1
     - {{ pin_compatible('numpy') }}
-    - h5py
 
 test:
   imports:
     - yt_astro_analysis
+    - yt_astro_analysis.cosmological_observation
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: http://yt-project.org/
+  home: https://github.com/yt-project/yt_astro_analysis
+  summary: yt astrophysical analysis modules extension
+  dev_url: https://github.com/yt-project/yt_astro_analysis/
   license: BSD-3-Clause
-  summary: Astrophysics-specific functionality built on top of yt
   license_file: COPYING.txt
-  dev_url: https://github.com/yt-project/yt_astro_analysis
 
 extra:
     recipe-maintainers:
