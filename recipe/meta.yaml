@@ -1,5 +1,5 @@
 {% set name = "yt-astro-analysis" %}
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
-  sha256: 201ee329797dc95f80a0c26e7d7f62b662722d44052e1620423869e87d2f41e7
+  sha256: fe544910c80f106874ba1605fb735154400e0969394bf6ab9233cdcc352ccdc0
 
 build:
   number: 0
-  skip: true   # [py>=312 or py2k]
+  skip: true  # [py>=312 or py2k]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -47,6 +47,6 @@ about:
   license_file: COPYING.txt
 
 extra:
-    recipe-maintainers:
-      - neutrinoceros
-      - brittonsmith
+  recipe-maintainers:
+    - neutrinoceros
+    - brittonsmith
