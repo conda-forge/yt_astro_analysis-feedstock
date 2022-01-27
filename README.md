@@ -1,15 +1,15 @@
-About yt_astro_analysis
+About yt-astro-analysis
 =======================
 
-Home: http://yt-project.org/
+Home: https://github.com/yt-project/yt_astro_analysis
 
-Package license: BSD 3-clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/yt_astro_analysis-feedstock/blob/master/LICENSE.txt)
 
-Summary: Astrophysics-specific functionality built on top of yt
+Summary: yt astrophysical analysis modules extension
 
-Development: https://github.com/yt-project/yt_astro_analysis
+Development: https://github.com/yt-project/yt_astro_analysis/
 
 Current build status
 ====================
@@ -125,28 +125,28 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-yt_astro_analysis-green.svg)](https://anaconda.org/conda-forge/yt_astro_analysis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/yt_astro_analysis.svg)](https://anaconda.org/conda-forge/yt_astro_analysis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/yt_astro_analysis.svg)](https://anaconda.org/conda-forge/yt_astro_analysis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/yt_astro_analysis.svg)](https://anaconda.org/conda-forge/yt_astro_analysis) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-yt--astro--analysis-green.svg)](https://anaconda.org/conda-forge/yt-astro-analysis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/yt-astro-analysis.svg)](https://anaconda.org/conda-forge/yt-astro-analysis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/yt-astro-analysis.svg)](https://anaconda.org/conda-forge/yt-astro-analysis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/yt-astro-analysis.svg)](https://anaconda.org/conda-forge/yt-astro-analysis) |
 
-Installing yt_astro_analysis
+Installing yt-astro-analysis
 ============================
 
-Installing `yt_astro_analysis` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `yt-astro-analysis` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `yt_astro_analysis` can be installed with:
+Once the `conda-forge` channel has been enabled, `yt-astro-analysis` can be installed with:
 
 ```
-conda install yt_astro_analysis
+conda install yt-astro-analysis
 ```
 
-It is possible to list all of the versions of `yt_astro_analysis` available on your platform with:
+It is possible to list all of the versions of `yt-astro-analysis` available on your platform with:
 
 ```
-conda search yt_astro_analysis --channel conda-forge
+conda search yt-astro-analysis --channel conda-forge
 ```
 
 
@@ -189,17 +189,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating yt_astro_analysis-feedstock
+Updating yt-astro-analysis-feedstock
 ====================================
 
-If you would like to improve the yt_astro_analysis recipe or build a new
+If you would like to improve the yt-astro-analysis recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/yt_astro_analysis-feedstock are
+Note that all branches in the conda-forge/yt-astro-analysis-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -214,5 +214,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@brittonsmith](https://github.com/brittonsmith)
-* [@neutrinoceros](https://github.com/neutrinoceros)
+* [@brittonsmith](https://github.com/brittonsmith/)
+* [@neutrinoceros](https://github.com/neutrinoceros/)
+
