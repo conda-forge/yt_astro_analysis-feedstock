@@ -1,0 +1,52 @@
+From a81652a0000ce8b5505b1aded041383340762505 Mon Sep 17 00:00:00 2001
+From: Corentin Cadiou <corentin.cadiou@cphyc.me>
+Date: Wed, 30 Aug 2023 17:07:40 +0200
+Subject: [PATCH] Automatically detect rockstar when installed in a conda
+ environment
+
+---
+ setup.py | 17 ++++++++++++++++-
+ 1 file changed, 16 insertions(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 2821528..08da046 100644
+--- a/setup.py
++++ b/setup.py
+@@ -78,6 +78,7 @@ def get_version(filename):
+ ]
+ 
+ # ROCKSTAR
++_paths_to_try = []
+ if os.path.exists("rockstar.cfg"):
+     try:
+         rd = open("rockstar.cfg").read().strip()
+@@ -87,7 +88,19 @@ def get_version(filename):
+         print("rockstar-galaxies install in rockstar.cfg and restart.")
+         print("(ex: \"echo '/path/to/rockstar-galaxies' > rockstar.cfg\" )")
+         sys.exit(1)
+-
++    _paths_to_try.append(rd)
++
++if "CONDA_PREFIX" in os.environ:
++    _paths_to_try.append(os.path.join(
++        os.environ["CONDA_PREFIX"],
++        "include",
++        "rockstar-galaxies"
++    ))
++
++for rd in _paths_to_try:
++    if not os.path.exists(rd):
++        continue
++    print(f"BUILDING with ROCKSTAR in {rd}")
+     rockstar_extdir = "yt_astro_analysis/halo_analysis/halo_finding/rockstar"
+     rockstar_extensions = [
+         Extension(
+@@ -108,6 +121,8 @@ def get_version(filename):
+         ext.include_dirs += [rd, os.path.join(rd, "io"), os.path.join(rd, "util")]
+     extensions += rockstar_extensions
+ 
++    break
++
+ 
+ CYTHONIZE_KWARGS = {
+     "compiler_directives": {"language_level": 3},

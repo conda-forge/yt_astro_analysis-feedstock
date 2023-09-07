@@ -9,15 +9,20 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
   sha256: 59307b598be8aab55b94e3b5a3dc185445885006b025fa0da50819e5c45297c0
+  # NOTE: Remove once https://github.com/yt-project/yt_astro_analysis/pull/219 is merged
+  # and shipped in a release.
+  patches:
+    - detect-rockstar.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py>=312 or py2k]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - rockstar-galaxies  # [linux]
   host:
     - cython >=0.29.21,<3.0
     - numpy
@@ -29,11 +34,13 @@ requirements:
     - python
     - yt >=4.0.1
     - {{ pin_compatible('numpy') }}
+    - rockstar-galaxies  # [linux]
 
 test:
   imports:
     - yt_astro_analysis
     - yt_astro_analysis.cosmological_observation
+    - yt_astro_analysis.halo_analysis.halo_finding.rockstar.rockstar_interface  # [linux]
   commands:
     - pip check
   requires:
