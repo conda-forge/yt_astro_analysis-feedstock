@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
-  sha256: 59307b598be8aab55b94e3b5a3dc185445885006b025fa0da50819e5c45297c0
+  sha256: f156e7026e98a4422f1e7eb81ff1a1a993207dda63b48b04234c60686ed363b9
 
 build:
   number: 0
