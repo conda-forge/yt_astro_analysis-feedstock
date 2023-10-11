@@ -243,4 +243,5 @@ Feedstock Maintainers
 
 * [@brittonsmith](https://github.com/brittonsmith/)
 * [@neutrinoceros](https://github.com/neutrinoceros/)
+* [@cphyc](https://github.com/cphyc/)
 
