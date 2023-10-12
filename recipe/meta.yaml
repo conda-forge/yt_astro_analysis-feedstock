@@ -11,7 +11,7 @@ source:
   sha256: f156e7026e98a4422f1e7eb81ff1a1a993207dda63b48b04234c60686ed363b9
 
 build:
-  number: 0
+  number: 1
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
