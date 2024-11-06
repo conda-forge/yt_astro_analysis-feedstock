@@ -11,7 +11,7 @@ source:
   sha256: f156e7026e98a4422f1e7eb81ff1a1a993207dda63b48b04234c60686ed363b9
 
 build:
-  number: 1
+  number: 2
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,6 +19,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - rockstar-galaxies  # [linux]
   host:
     - cython >=3.0.3
@@ -30,7 +31,6 @@ requirements:
     - more-itertools >=8.4
     - python
     - yt >=4.0.1
-    - {{ pin_compatible('numpy') }}
     - rockstar-galaxies  # [linux]
 
 test:
