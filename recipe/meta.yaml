@@ -9,6 +9,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
   sha256: f156e7026e98a4422f1e7eb81ff1a1a993207dda63b48b04234c60686ed363b9
+  patches:
+    - fix-hop-hop-compilation.patch
 
 build:
   number: 2
