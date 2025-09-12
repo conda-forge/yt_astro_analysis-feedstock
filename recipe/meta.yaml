@@ -13,7 +13,7 @@ source:
     - fix-hop-hop-compilation.patch
 
 build:
-  number: 2
+  number: 3
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
