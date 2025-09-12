@@ -26,6 +26,7 @@ requirements:
     - numpy
     - pip
     - python
+    - setuptools
   run:
     - h5py >=3.1.0
     - more-itertools >=8.4
