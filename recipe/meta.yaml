@@ -11,13 +11,13 @@ source:
   sha256: 4211d2ff02e94e7b30c0bc92288c0df64bcf14374b886b2d63676d4e1030c937
 
 build:
+  # Temporary fix, see https://github.com/yt-project/yt_astro_analysis/issues/277
   script_env:
     - CFLAGS=-Wno-incompatible-pointer-types  # [linux]
   number: 0
-    # Keep in sync with pyproject.toml
-    skip: true  # [py<39]
-    # Temporary fix, see https://github.com/yt-project/yt_astro_analysis/issues/277
-    script: {{ PYTHON }} -m pip install . -vv
+  # Keep in sync with pyproject.toml
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
