@@ -14,7 +14,7 @@ build:
   # Temporary fix, see https://github.com/yt-project/yt_astro_analysis/issues/277
   script_env:
     - CFLAGS=-Wno-incompatible-pointer-types  # [linux]
-  number: 0
+  number: 1
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
