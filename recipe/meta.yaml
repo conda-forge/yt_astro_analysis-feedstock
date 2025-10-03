@@ -7,14 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yt_astro_analysis-{{ version }}.tar.gz
-  sha256: 4211d2ff02e94e7b30c0bc92288c0df64bcf14374b886b2d63676d4e1030c937
+  url: https://codeload.github.com/cphyc/yt_astro_analysis/tar.gz/refs/heads/fix-rockstar-compilation
+  sha256: 330191d302ee8ff68a1ac74152025843d4fd1e86857781f43f8177679c71781f
 
 build:
-  # Temporary fix, see https://github.com/yt-project/yt_astro_analysis/issues/277
-  script_env:
-    - CFLAGS=-Wno-incompatible-pointer-types  # [linux]
-  number: 1
+  number: 2
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . -vv
