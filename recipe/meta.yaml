@@ -17,7 +17,7 @@ build:
   skip: true  # [py<39]
   script: |
     ls
-    {{ PYTHON }} -m pip install yt_astro_analysis-fix-rockstar-compilation -vv
+    {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
