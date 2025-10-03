@@ -14,7 +14,7 @@ build:
   number: 2
   # Keep in sync with pyproject.toml
   skip: true  # [py<39]
-  script: {{ PYTHON }} -m pip install yt_astro_analysis/ -vv
+  script: {{ PYTHON }} -m pip install yt_astro_analysis-fix-rockstar-compilation/ -vv
 
 requirements:
   build:
