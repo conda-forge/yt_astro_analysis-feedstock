@@ -9,6 +9,7 @@ package:
 source:
   url: https://codeload.github.com/cphyc/yt_astro_analysis/tar.gz/refs/heads/fix-rockstar-compilation
   sha256: 330191d302ee8ff68a1ac74152025843d4fd1e86857781f43f8177679c71781f
+  fn: yt_astro_analysis-fix-rockstar-compilation.tar.gz
 
 build:
   number: 2
